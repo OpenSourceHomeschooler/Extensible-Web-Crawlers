@@ -29,7 +29,7 @@ class WebCrawler:
         return False
     
     # This is the heart of the crawler and will crawl forever
-    def crawlUrls(self, url, depth):
+    def crawlUrls(self, url):
         textfile = file(self.fileName, 'wt')
         urlList = Queue.Queue()
         urlList.put(url)
@@ -51,4 +51,4 @@ class WebCrawler:
 # The following are not part of the class but they rather test it
 myCrawler = WebCrawler('CrawledUrls.txt')
 
-myCrawler.crawlUrls("http://wordsmakeworlds.com/", 2)
+myCrawler.crawlUrls("http://wordsmakeworlds.com/")
